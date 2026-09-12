@@ -1,1 +1,9 @@
-[]
+[
+  {
+    "id": "react-doctor",
+    "repo": "zhukunpenglinyutong/ccgui-plugin-react-doctor",
+    "name": "React Doctor",
+    "description": "一键运行 npx react-doctor@latest 代码体检：评分环、错误/警告统计、按文件分组的问题列表与修复建议、原始输出，结果本地持久化；非满分时可「一键修复」把问题清单填入聊天输入框。",
+    "author": "zhukunpenglinyutong"
+  }
+]
