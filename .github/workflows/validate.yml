@@ -1,0 +1,41 @@
+# 索引仓审核 CI：PR 校验变动条目（含 Release 产物远端核查），main 全量复检。
+# 本工作流只读权限、零 token 依赖，fork PR 安全。
+name: validate
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Validate changed entries (PR)
+        if: github.event_name == 'pull_request'
+        run: node scripts/validate.mjs --base "origin/${{ github.base_ref }}" --report report.md --result result.json
+
+      - name: Validate all entries (main)
+        if: github.event_name == 'push'
+        run: node scripts/validate.mjs --all --report report.md --result result.json
+
+      - name: Upload review report
+        if: always() && github.event_name == 'pull_request'
+        uses: actions/upload-artifact@v4
+        with:
+          name: validation-result
+          path: |
+            report.md
+            result.json
+          retention-days: 5

@@ -1,0 +1,38 @@
+# 索引自动更新机器人：每小时轮询已登记插件的 latest release，发现新版本
+# 自动开「版本登记 PR」（每个插件一个分支一个 PR）。后续流程无需人工：
+# validate CI 校验 → review 工作流在无权限新增时自动合并。
+#
+# 注意：Actions 默认 GITHUB_TOKEN 创建的 PR 不会触发 pull_request 工作流
+# （GitHub 防递归设计）。要让 validate CI 自动跑，需在仓库 Settings →
+# Secrets 配置 INDEX_BOT_TOKEN（对本仓有 contents + pull-requests 写权限的
+# fine-grained PAT）。未配置时机器人仍会开 PR，但 CI 需人工推一次空提交
+# 或 close/reopen 触发。
+name: update-index
+
+on:
+  schedule:
+    - cron: "17 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: update-index
+  cancel-in-progress: false
+
+jobs:
+  bump:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Bump registered plugin versions
+        env:
+          GH_TOKEN: ${{ secrets.INDEX_BOT_TOKEN || secrets.GITHUB_TOKEN }}
+        run: node scripts/bump-versions.mjs

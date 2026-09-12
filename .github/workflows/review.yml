@@ -1,0 +1,51 @@
+# PR 审核报告评论 + 版本登记 PR 自动合并。
+# 安全模式：本工作流在 base 仓上下文运行（write 权限），不 checkout/执行 PR
+# 代码，只消费 validate 工作流产出的报告工件。自动合并的门槛（全部满足）：
+#   1. validate 通过；2. 改动仅限单个 plugins/<id>.json（纯版本登记）；
+#   3. 无权限新增；4. PR 作者 == 插件仓库所有者，或 PR 分支来自索引仓本身（机器人 bump/* 分支，仅本仓协作者可推）；5. PR 头部与已校验提交一致。
+name: review
+
+on:
+  workflow_run:
+    workflows: ["validate"]
+    types: [completed]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  report:
+    if: ${{ github.event.workflow_run.event == 'pull_request' && github.event.workflow_run.pull_requests[0].number }}
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      PR: ${{ github.event.workflow_run.pull_requests[0].number }}
+    steps:
+      - name: Download validation result
+        run: gh run download "${{ github.event.workflow_run.id }}" --name validation-result --dir result
+
+      - name: Post review report
+        run: gh pr comment "$PR" --body-file result/report.md
+
+      - name: Auto-merge version registration PR
+        if: ${{ github.event.workflow_run.conclusion == 'success' }}
+        run: |
+          set -euo pipefail
+          if ! node -e '
+            const r = require("./result/result.json");
+            if (!r.versionRegistrationOnly) { console.log("非纯版本登记 PR（改动不限于单个 plugins/<id>.json），转人工"); process.exit(1); }
+            if (r.permissionsAdded.length) { console.log("权限有新增，转人工：" + r.permissionsAdded.join("；")); process.exit(1); }
+          '; then exit 0; fi
+          AUTHOR=$(gh pr view "$PR" --json author --jq .author.login)
+          HEAD=$(gh pr view "$PR" --json headRefOid --jq .headRefOid)
+          HEAD_REPO=$(gh pr view "$PR" --json headRepository --jq .headRepository.nameWithOwner)
+          OWNER=$(node -p "require('./result/result.json').entries[0].repo.split('/')[0]")
+          if [ "$HEAD" != "${{ github.event.workflow_run.head_sha }}" ]; then
+            echo "PR 头部已在校验后变化，放弃自动合并"; exit 0
+          fi
+          if [ "$AUTHOR" != "$OWNER" ] && [ "$HEAD_REPO" != "${{ github.repository }}" ]; then
+            echo "PR 作者 $AUTHOR ≠ 插件仓库所有者 $OWNER，且分支不来自索引仓机器人，转人工"; exit 0
+          fi
+          echo "版本登记 PR 全部条件满足，自动合并"
+          gh pr merge "$PR" --squash
