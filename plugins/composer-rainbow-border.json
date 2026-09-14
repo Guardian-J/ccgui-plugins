@@ -1,0 +1,12 @@
+{
+  "id": "composer-rainbow-border",
+  "repo": "libo-zhou/ccgui-plugin-composer-rainbow-border",
+  "tier": "declarative",
+  "version": "1.0.3",
+  "minAppVersion": "1.0.0",
+  "permissions": [],
+  "sha256": {
+    "manifest.json": "fc55945befaa08f7409c64eea3d6f817c2e487a4fc3601bf1a1fe3fca1dff245",
+    "styles.css": "710862329abdc87c619fa9545ea35e783aab3fd72234a8fd88ea5811ff5bcf8d"
+  }
+}
