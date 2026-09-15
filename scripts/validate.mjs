@@ -47,6 +47,9 @@ const KNOWN_PERMISSIONS = new Set([
   "events",
   "network:none",
   "composer:draft",
+  "host:session",
+  "host:workspace",
+  "host:workspace:remote",
 ]);
 
 /** network: 授权体：<host>（任意端口）/ <host>:<port> / <host>:<a>-<b>（含端点）。 */
@@ -136,6 +139,8 @@ const CTX_PERMISSION_MAP = [
   { re: /ctx\.i18n\./, permission: "i18n" },
   { re: /ctx\.storage\./, permission: "storage" },
   { re: /ctx\.events\./, permission: "events" },
+  { re: /ctx\.workspaces\.add\s*\(/, permission: "host:workspace" },
+  { re: /ctx\.sessions\./, permission: "host:session" },
 ];
 const BRIDGE_NETWORK_RE = /plugin_http_request/;
 const BRIDGE_EXEC_RE = /plugin_exec_(run|spawn)/;
@@ -413,6 +418,9 @@ async function checkRelease(entry, errors, warnings, report) {
       errors.push(`${id}: 代码调用 plugin_exec_* 但未声明任何 exec: 授权`);
     }
     const used = new Set(CTX_PERMISSION_MAP.filter(({ re }) => re.test(text)).map((m) => m.permission));
+    // host:workspace:remote 是 ctx.workspaces.add 携带 wsl meta 时的升级修饰，
+    // 同一调用点，无法靠静态启发式区分；host:workspace 已检出即视为在用。
+    if (used.has("host:workspace")) used.add("host:workspace:remote");
     for (const p of declared) {
       if (KNOWN_PERMISSIONS.has(p) && p !== "network:none" && !used.has(p)) {
         warnings.push(`${id}: 声明了权限 "${p}" 但未在代码中检出对应调用（请审核员确认是否多余）`);

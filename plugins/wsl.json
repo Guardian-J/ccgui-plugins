@@ -1,5 +1,6 @@
 {
   "id": "wsl",
+  "repo": "chenxiangning/ccgui-plugin-wsl",
   "tier": "js",
   "version": "0.4.6",
   "minAppVersion": "1.0.2",
