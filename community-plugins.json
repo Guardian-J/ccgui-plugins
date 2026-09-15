@@ -1,5 +1,12 @@
 [
   {
+    "id": "composer-rainbow-border",
+    "repo": "libo-zhou/ccgui-plugin-composer-rainbow-border",
+    "name": "彩虹跑马灯边界线",
+    "description": "为聊天输入框添加沿边界持续流动的彩虹跑马灯效果。",
+    "author": "libo-zhou"
+  },
+  {
     "id": "react-doctor",
     "repo": "zhukunpenglinyutong/ccgui-plugin-react-doctor",
     "name": "React Doctor",
