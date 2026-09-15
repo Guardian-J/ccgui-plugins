@@ -5,5 +5,12 @@
     "name": "React Doctor",
     "description": "一键运行 npx react-doctor@latest 代码体检：评分环、错误/警告统计、按文件分组的问题列表与修复建议、原始输出，结果本地持久化；非满分时可「一键修复」把问题清单填入聊天输入框。",
     "author": "zhukunpenglinyutong"
+  },
+  {
+    "id": "wsl",
+    "repo": "chenxiangning/ccgui-plugin-wsl",
+    "name": "WSL 管理器",
+    "description": "WSL 发行版管理器:本机诊断与设默认、引擎探针、远程宿主(密码/key)、WSL 工作区登记、发行版内文件面板,claude/codex/omp 会话列表与历史回放。",
+    "author": "chenxiangning"
   }
 ]

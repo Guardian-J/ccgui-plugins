@@ -1,0 +1,25 @@
+{
+  "id": "wsl",
+  "tier": "js",
+  "version": "0.4.6",
+  "minAppVersion": "1.0.2",
+  "sdkVersion": ">=0.3.4",
+  "permissions": [
+    "ui:settings-section",
+    "ui:panel-tab",
+    "storage",
+    "theme",
+    "exec:wsl.exe",
+    "exec:ssh",
+    "exec:expect",
+    "host:workspace",
+    "host:workspace:remote",
+    "host:session",
+    "ui:add-menu",
+    "ui:page"
+  ],
+  "sha256": {
+    "main.js": "61be631ee26d841a912d9d4c09bb97b546c1839c43c1a7ebf0bc7265200f4202",
+    "manifest.json": "0785b5f128ec696b6bfbd49ba3d3eabe544c29478432eceddbdb22fefefc009f"
+  }
+}
