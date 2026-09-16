@@ -1,0 +1,37 @@
+{
+  "id": "model-switcher",
+  "repo": "Guardian-J/ccgui-plugin-model-switcher",
+  "tier": "js",
+  "version": "1.0.9",
+  "minAppVersion": "1.0.0",
+  "sdkVersion": "*",
+  "permissions": [
+    "storage",
+    "ui:composer",
+    "ui:markdown",
+    "ui:settings-section",
+    "ui:status-bar",
+    "ui:command",
+    "ui:panel-tab",
+    "theme",
+    "i18n",
+    "events",
+    "exec:node",
+    "network:api.deepseek.com",
+    "network:openrouter.ai",
+    "network:api.openai.com",
+    "network:api.anthropic.com",
+    "network:api.siliconflow.cn",
+    "network:dashscope.aliyuncs.com",
+    "network:ark.cn-beijing.volces.com",
+    "network:api.minimax.chat",
+    "network:api.groq.com",
+    "network:127.0.0.1:1-65535",
+    "network:localhost:1-65535"
+  ],
+  "sha256": {
+    "main.js": "d9273770779c4617b194c980f400183884a8c428e14e5caca1b431cc19beb1e7",
+    "manifest.json": "c7bfeb948efccffdaa9d0f7cb316c6f1c411f316a3a95254905063b31e8f1a79",
+    "styles.css": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}
