@@ -1,5 +1,12 @@
 [
   {
+    "id": "auto-title",
+    "repo": "zhukunpenglinyutong/ccgui-plugin-auto-title",
+    "name": "会话自动命名",
+    "description": "每轮对话结束后用本机 CLI 或 DeepSeek 生成「emoji + 对象｜目标」式会话标题，支持 codex / omp / pi / claude；不覆盖手动改名，可暂停、可只命名一次。",
+    "author": "zhukunpenglinyutong"
+  },
+  {
     "id": "composer-rainbow-border",
     "repo": "libo-zhou/ccgui-plugin-composer-rainbow-border",
     "name": "彩虹跑马灯边界线",

@@ -1,0 +1,28 @@
+{
+  "id": "auto-title",
+  "repo": "zhukunpenglinyutong/ccgui-plugin-auto-title",
+  "tier": "js",
+  "version": "0.5.0",
+  "minAppVersion": "1.0.2",
+  "sdkVersion": ">=0.3.6",
+  "permissions": [
+    "events",
+    "storage",
+    "ui:status-bar",
+    "ui:settings-section",
+    "ui:command",
+    "ui:session-menu",
+    "exec:python3",
+    "exec:claude",
+    "exec:codex",
+    "exec:gemini",
+    "exec:omp",
+    "exec:pi",
+    "network:api.deepseek.com"
+  ],
+  "sha256": {
+    "main.js": "74565d3601a4865d4831b88c4605c59141ab7d2122380876600e3ade3096ec51",
+    "manifest.json": "acc65b180e1d9f8879067a57f9f87cbe22064af72c89ca0613c2ee75f98ca839",
+    "styles.css": "4ee5ded5cd4fc8ef923a112b79003d1d05c01a3c27ca76295c6e8309deca429d"
+  }
+}

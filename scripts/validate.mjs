@@ -39,6 +39,7 @@ const KNOWN_PERMISSIONS = new Set([
   "ui:panel-tab",
   "ui:status-bar",
   "ui:command",
+  "ui:session-menu",
   "ui:markdown",
   "ui:page",
   "ui:timeline-row",
