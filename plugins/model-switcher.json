@@ -30,7 +30,7 @@
     "network:localhost:1-65535"
   ],
   "sha256": {
-    "main.js": "6edcd3e64396b15de2246fd3dcffc28b69ee12fa89769053be661af040191c72",
+    "main.js": "8a44c188488c8ee20c3dca574589fa71076290fe5b3e83dacce281b608d6af0d",
     "manifest.json": "7f9c8ae668f26055e94837841860c941a82402b9abff6c47354251de635b48f9",
     "scrub-core.cjs": "b2b505c48f722da8859be8aa49563076a0448ff520854193f9b9d3d6dff5cfec"
   }
