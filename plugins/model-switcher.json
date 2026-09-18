@@ -26,7 +26,7 @@
     "network:localhost:1-65535"
   ],
   "sha256": {
-    "main.js": "56d7aeb0b5cf18175fe33209c4961e2ea0ad317f2502afc6897f9ad0557dfbf5",
+    "main.js": "d590633fbd10b03786672ed148c18a667bb0a4bc2ba4217cf34210a3cb7adc8a",
     "manifest.json": "a687bfbf03052f65a138582d34360d3a860b4c199d51fa97ced6f80ec336623c"
   }
 }
