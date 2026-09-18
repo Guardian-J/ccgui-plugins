@@ -1,0 +1,19 @@
+{
+  "id": "token-meter",
+  "repo": "zhukunpenglinyutong/ccgui-plugin-token-meter",
+  "tier": "js",
+  "version": "0.1.1",
+  "minAppVersion": "1.0.4",
+  "sdkVersion": "^0.3",
+  "permissions": [
+    "events",
+    "ui:composer-status",
+    "theme",
+    "storage"
+  ],
+  "sha256": {
+    "main.js": "889b842ae8674f3fd96c3d439c997f4bf585a92253425c3177bc140e8e588cf5",
+    "manifest.json": "bae953b9cbe9141e029f2acc6bfd455494f4b8b765ec9c25c793d6f96b34453b",
+    "styles.css": "391a1ca7baa38420ff25117086c473e191ed30988a7b68d2e56d492edf2cf2ff"
+  }
+}
