@@ -28,6 +28,13 @@
     "author": "zhukunpenglinyutong"
   },
   {
+    "id": "token-meter",
+    "repo": "zhukunpenglinyutong/ccgui-plugin-token-meter",
+    "name": "Token 速度表",
+    "description": "composer 状态行实时显示 token 输出速度与缓存命中率，支持全部 11 个 CLI 引擎。",
+    "author": "zhukunpenglinyutong"
+  },
+  {
     "id": "wsl",
     "repo": "chenxiangning/ccgui-plugin-wsl",
     "name": "WSL 管理器",
