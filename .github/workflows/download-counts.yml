@@ -1,0 +1,39 @@
+# 下载量统计机器人：每 6 小时聚合已登记插件的 release 下载数为
+# download-counts.json 并直接提交回 main（统计数据无需 PR 评审）。
+# 客户端随索引经 raw.githubusercontent.com 读取，不消耗用户侧 API 配额。
+name: download-counts
+
+on:
+  schedule:
+    - cron: "23 */6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: download-counts
+  cancel-in-progress: false
+
+jobs:
+  aggregate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Aggregate release download counts
+        env:
+          GH_TOKEN: ${{ secrets.INDEX_BOT_TOKEN || secrets.GITHUB_TOKEN }}
+        run: node scripts/update-download-counts.mjs
+
+      - name: Commit updated counts
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add download-counts.json
+          git diff --cached --quiet || git commit -m "chore: update download counts"
+          git push

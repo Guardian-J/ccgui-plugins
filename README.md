@@ -11,6 +11,7 @@ GitHub Releases 分发（Obsidian 社区插件同款模式，零自建服务器�
 ```
 community-plugins.json        # 插件列表（id/repo/name/description/author，按 id 字典序）
 plugins/<id>.json             # 每个插件的版本登记：version/tier/permissions/sha256/minAppVersion
+download-counts.json         # 各插件累计下载量（机器人每 6h 聚合 release 下载数生成，勿手改）
 scripts/validate.mjs          # 审核校验器（零依赖 Node ≥ 20）
 .github/workflows/validate.yml  # PR 校验 + main 全量复检
 .github/workflows/review.yml    # 审核报告自动评论 + 版本登记 PR 自动合并
