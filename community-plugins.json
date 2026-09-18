@@ -14,6 +14,13 @@
     "author": "libo-zhou"
   },
   {
+    "id": "model-switcher",
+    "repo": "Guardian-J/ccgui-plugin-model-switcher",
+    "name": "模型与供应商助手",
+    "description": "模型与 CLI 选择、供应商渠道切换、独立渠道管理、全局主题、会话模型显示、幕布链接跳转，以及可选的 Claude Agent SDK 提示词清洗。",
+    "author": "Guardian-J"
+  },
+  {
     "id": "react-doctor",
     "repo": "zhukunpenglinyutong/ccgui-plugin-react-doctor",
     "name": "React Doctor",
