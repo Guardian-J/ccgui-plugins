@@ -35,10 +35,6 @@ const KNOWN_PERMISSIONS = new Set([
   "storage",
   "ui:settings-section",
   "ui:add-menu",
-<<<<<<< HEAD
-  "ui:composer",
-=======
->>>>>>> 0503163 (update: model-switcher 同步到 1.0.20)
   "ui:composer-status",
   "ui:panel-tab",
   "ui:status-bar",
