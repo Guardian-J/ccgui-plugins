@@ -2,15 +2,19 @@
   "id": "model-switcher",
   "repo": "Guardian-J/ccgui-plugin-model-switcher",
   "tier": "js",
-  "version": "1.0.14",
+  "version": "1.0.20",
   "minAppVersion": "1.0.4",
-  "sdkVersion": "^0.3.10",
+  "sdkVersion": "^0.3.11",
   "permissions": [
     "storage",
+    "host:session",
     "ui:composer-status",
+    "ui:markdown",
     "ui:settings-section",
-    "ui:statusbar",
+    "ui:status-bar",
     "ui:command",
+    "theme",
+    "i18n",
     "events",
     "exec:node",
     "network:api.deepseek.com",
@@ -26,7 +30,7 @@
     "network:localhost:1-65535"
   ],
   "sha256": {
-    "main.js": "d590633fbd10b03786672ed148c18a667bb0a4bc2ba4217cf34210a3cb7adc8a",
-    "manifest.json": "a687bfbf03052f65a138582d34360d3a860b4c199d51fa97ced6f80ec336623c"
+    "main.js": "f101010bb54295010717995745b7194b8f187b72250da3bd20dc2f560a77c2b6",
+    "manifest.json": "18cd00eb1b702c76780d6c81e976a4c32ee0ae6199a6baedb20bf527efaa7729"
   }
 }
