@@ -10,7 +10,7 @@
     "id": "balance-meter",
     "repo": "zhujiuyi/ccgui-plugin-balance-meter",
     "name": "余额与余量",
-    "description": "按当前引擎实际在用的网关地址识别供应商与计费方式：API 计费查余额、订阅计划查余量，没有公开接口时明确提示；支持手动刷新与每轮对话后自动刷新。",
+    "description": "按当前引擎实际在用的网关识别供应商与计费方式：API 查余额、订阅查余量；已支持 ChatGPT、Claude、OpenCode Go、Kimi、智谱、MiniMax、Grok 等订阅渠道，没有可用接口时明确提示；支持手动刷新与每轮对话后自动刷新。",
     "author": "zhujiuyi"
   },
   {
