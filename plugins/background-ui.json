@@ -1,0 +1,26 @@
+{
+  "id": "background-ui",
+  "repo": "Mermenglin/ccgui-plugin-background-ui",
+  "tier": "js",
+  "version": "0.0.1",
+  "minAppVersion": "1.0.0",
+  "sdkVersion": "^0.3.1",
+  "permissions": [
+    "storage",
+    "ui:settings-section",
+    "theme",
+    "network:wp.upx8.com",
+    "network:cdn-hsyq-static.shanhutech.cn",
+    "network:img.birdpaper.com.cn",
+    "network:www.bing.com",
+    "network:wallhaven.cc",
+    "network:w.wallhaven.cc",
+    "network:th.wallhaven.cc",
+    "exec:node"
+  ],
+  "sha256": {
+    "main.js": "e2f7d5060d0e10db653e6131c2995eed77aa890b4c69bf26a476696acbf47148",
+    "manifest.json": "0e6d90e93507191b37e8cbaacd4952add31cbe008fe5ec4e42e87c4810c77fb9",
+    "styles.css": "2b4dda92d07830ac5b3218f5c26317b661846733773b84d1cf26a952722ff4c4"
+  }
+}
