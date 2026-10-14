@@ -15,10 +15,10 @@
   "port-manager": 70,
   "prompt-enhancer": 104,
   "react-doctor": 382,
-  "service-status": 202,
+  "service-status": 204,
   "session-notes": 136,
   "session-rainbow-border": 109,
-  "token-meter": 691,
+  "token-meter": 692,
   "window-model-assistant": 210,
   "wsl": 209
 }
