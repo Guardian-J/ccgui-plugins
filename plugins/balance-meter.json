@@ -2,7 +2,7 @@
   "id": "balance-meter",
   "repo": "zhujiuyi/ccgui-plugin-balance-meter",
   "tier": "js",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "minAppVersion": "1.0.5",
   "sdkVersion": "^0.3",
   "permissions": [
@@ -18,8 +18,8 @@
     "exec:sh"
   ],
   "sha256": {
-    "manifest.json": "d6ce095837f0c3e2ea7cc58dc15588b6da724b02e0f85c00035369a12966e2ce",
-    "main.js": "1b86a0b00c9ed18e3005ff361149e010b56c244dc341bdbf5e808bd1f24d02c5"
+    "manifest.json": "4cdb47467f059c65b553fb6118966059581a3889b0b26fecf86ffb3f479ac932",
+    "main.js": "b22e834d658bb02da3658a0c8743279b61e474e657d9bdd4dfb89a03f9108b7b"
   },
   "icon": "docs/icon.png",
   "screenshots": [
