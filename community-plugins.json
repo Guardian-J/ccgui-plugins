@@ -70,6 +70,13 @@
     "author": "wszbest68-gif"
   },
   {
+    "id": "file-preview-panel",
+    "repo": "PartyNextDoor999/ccgui-plugin-file-preview-panel",
+    "name": "文件预览面板",
+    "description": "在右侧面板浏览工作区文件树，直接预览 Markdown（含 Mermaid 图表）与文本文件，不另开主标签页。仅支持 Windows。",
+    "author": "PartyNextDoor999"
+  },
+  {
     "id": "font-tuner",
     "repo": "3774929/ccgui-plugin-font-tuner",
     "name": "字体调校",
