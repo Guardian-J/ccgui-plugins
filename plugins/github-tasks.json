@@ -25,5 +25,12 @@
     "main.js": "027ffc71bbc2c6a5bae7e01bc2891a821c05a467ef415bc1e5b3bdd5d13231c5",
     "manifest.json": "c5295f9e357b7b4098173f93d3e8043f24243228e43a53d9f5466e9263f8146a",
     "styles.css": "ae4d7fcc3b6285796076ca4ef33da86a75d74cf3bb0efbe97e8250710e98d69b"
-  }
+  },
+  "icon": "docs/icon.png",
+  "screenshots": [
+    "docs/screenshot-1.png",
+    "docs/screenshot-2.png",
+    "docs/screenshot-3.png",
+    "docs/screenshot-4.png"
+  ]
 }
