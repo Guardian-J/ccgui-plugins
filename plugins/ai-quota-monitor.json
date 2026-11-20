@@ -2,27 +2,37 @@
   "id": "ai-quota-monitor",
   "repo": "libo-zhou/ccgui-plugin-ai-quota-monitor",
   "tier": "js",
-  "version": "0.5.1",
-  "minAppVersion": "1.0.8",
-  "sdkVersion": "^0.3.7",
+  "version": "0.7.1",
+  "updatedAt": "2026-11-20T02:42:19Z",
+  "minAppVersion": "1.2.1",
+  "sdkVersion": "^0.3.25",
   "permissions": [
     "storage",
     "events",
     "ui:status-bar",
     "ui:command",
     "exec:omp",
+    "exec:agy",
     "exec:node",
     "network:chatgpt.com",
-    "network:copilot.tencent.com"
+    "network:copilot.tencent.com",
+    "network:127.0.0.1:4096",
+    "network:management-api.x.ai:443",
+    "network:opencode.ai:443",
+    "network:open.bigmodel.cn:443",
+    "network:api.z.ai:443",
+    "network:api.kimi.com:443",
+    "limits.read"
   ],
   "sha256": {
-    "main.js": "7f4a4842fcc4128355dd63f619b43e0c6475ddb62cf7be063f48182ec1142a4f",
-    "manifest.json": "bc663cb5f9688f72edcc2fe750db07ecac5b623cff6dcd585d2b5a05bd33d285",
-    "styles.css": "79d6521a9e3387903b7a8f866c3c6a6ac8d6770fd7dae0a96490c931792c3134",
-    "usage-scanner.cjs": "96b2e573f04726a37914f8805724342e8a9004de96e05801b95abf408c76ad8e"
+    "manifest.json": "9a4d2569887dc80d86f1ee708bdde3bb3712db1c829e9d9a0764f9cc9ec6ade9",
+    "main.js": "03f0560fdef2aab0b98669fae416d7d55eeba60b11adeac8000a3c28e9f0c640",
+    "usage-scanner.cjs": "ffe0a22ee4c06f0a0a509190652875bee464e83945bac10797ca8286176496f7",
+    "styles.css": "d1810ca2304ef7064d1327fe97f0a19cefccf96b939007aa50f4800e05441321"
   },
   "screenshots": [
     "docs/codex-quota.png",
-    "docs/usage-stats.png"
+    "docs/usage-stats.png",
+    "docs/manage-services.png"
   ]
 }
